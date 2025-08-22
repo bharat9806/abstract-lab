@@ -1,0 +1,22 @@
+.themeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: var(--gray-alpha-100);
+        transform: scale(1.1);
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
