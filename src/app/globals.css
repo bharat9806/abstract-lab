@@ -1,50 +1,76 @@
-/* Light theme variables */
-:root,
+/* Import Cormorant Garamond font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Light theme variables - forced as default */
+:root {
+  --background: #fafafa; /* Off-whitish */
+  --foreground: #0a0a0a; /* Deep Black */
+  --card-background: rgba(250, 250, 250, 0.95);
+  --footer-background: #f5f5f5;
+  --header-background: rgba(250, 250, 250, 0.95);
+  --text-color: #0a0a0a; /* Deep Black */
+  --text-light: #404040;
+  --primary-color: #0a0a0a; /* Deep Black */
+  --secondary-color: #404040;
+  --gray-alpha-200: rgba(10, 10, 10, 0.08);
+  --gray-alpha-100: rgba(10, 10, 10, 0.05);
+  --shadow-color: 10, 10, 10;
+  
+  /* Gray gradients */
+  --gray-gradient-light: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+  --gray-gradient-medium: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
+  --gray-gradient-dark: linear-gradient(135deg, #d0d0d0 0%, #c0c0c0 100%);
+  --gray-gradient-subtle: linear-gradient(135deg, rgba(10, 10, 10, 0.02) 0%, rgba(10, 10, 10, 0.05) 100%);
+  
+  color-scheme: light;
+}
+
 .light-mode {
-  --background: #ffffff;
-  --foreground: #171717;
-  --card-background: rgba(255, 255, 255, 0.9);
-  --footer-background: #f8f9fa;
-  --header-background: rgba(255, 255, 255, 0.9);
-  --text-color: #333;
-  --text-light: #666;
-  --primary-color: #2563eb;
-  --secondary-color: #7c3aed;
-  --gray-alpha-200: rgba(0, 0, 0, 0.08);
-  --gray-alpha-100: rgba(0, 0, 0, 0.05);
-  --shadow-color: 0, 0, 0;
+  --background: #fafafa; /* Off-whitish */
+  --foreground: #0a0a0a; /* Deep Black */
+  --card-background: rgba(250, 250, 250, 0.95);
+  --footer-background: #f5f5f5;
+  --header-background: rgba(250, 250, 250, 0.95);
+  --text-color: #0a0a0a; /* Deep Black */
+  --text-light: #404040;
+  --primary-color: #0a0a0a; /* Deep Black */
+  --secondary-color: #404040;
+  --gray-alpha-200: rgba(10, 10, 10, 0.08);
+  --gray-alpha-100: rgba(10, 10, 10, 0.05);
+  --shadow-color: 10, 10, 10;
+  
+  /* Gray gradients */
+  --gray-gradient-light: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+  --gray-gradient-medium: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
+  --gray-gradient-dark: linear-gradient(135deg, #d0d0d0 0%, #c0c0c0 100%);
+  --gray-gradient-subtle: linear-gradient(135deg, rgba(10, 10, 10, 0.02) 0%, rgba(10, 10, 10, 0.05) 100%);
+  
   color-scheme: light;
 }
 
 /* Dark theme variables */
 .dark-mode {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --card-background: rgba(23, 23, 23, 0.9);
-  --footer-background: #111111;
-  --header-background: rgba(23, 23, 23, 0.9);
-  --text-color: #ededed;
-  --text-light: #a0a0a0;
-  --gray-alpha-200: rgba(255, 255, 255, 0.15);
-  --gray-alpha-100: rgba(255, 255, 255, 0.08);
+  --background: #0a0a0a; /* Deep Black */
+  --foreground: #fafafa; /* Off-whitish */
+  --card-background: rgba(10, 10, 10, 0.95);
+  --footer-background: #0f0f0f;
+  --header-background: rgba(10, 10, 10, 0.95);
+  --text-color: #fafafa; /* Off-whitish */
+  --text-light: #d0d0d0;
+  --gray-alpha-200: rgba(250, 250, 250, 0.15);
+  --gray-alpha-100: rgba(250, 250, 250, 0.08);
   --shadow-color: 0, 0, 0;
+  
+  /* Gray gradients for dark mode */
+  --gray-gradient-light: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+  --gray-gradient-medium: linear-gradient(135deg, #202020 0%, #181818 100%);
+  --gray-gradient-dark: linear-gradient(135deg, #252525 0%, #1d1d1d 100%);
+  --gray-gradient-subtle: linear-gradient(135deg, rgba(250, 250, 250, 0.02) 0%, rgba(250, 250, 250, 0.05) 100%);
+  
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.light-mode) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card-background: rgba(23, 23, 23, 0.9);
-    --footer-background: #111111;
-    --header-background: rgba(23, 23, 23, 0.9);
-    --text-color: #ededed;
-    --text-light: #a0a0a0;
-    --gray-alpha-200: rgba(255, 255, 255, 0.145);
-    --gray-alpha-100: rgba(255, 255, 255, 0.06);
-    --shadow-color: 255, 255, 255;
-  }
-}
+/* Removed automatic dark mode detection - keeping light mode as default */
 
 html {
   scroll-behavior: smooth;
@@ -77,7 +103,9 @@ a {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -93,8 +121,9 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Force light color scheme */
+html {
+  color-scheme: light;
 }
+
+/* Task Board Component Styles - Removed Tailwind classes, now using SCSS */
