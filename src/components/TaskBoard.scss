@@ -1,0 +1,99 @@
+.task-board {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  min-height: 600px;
+  align-items: flex-start;
+
+  // Custom scrollbar styling
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--gray-alpha-100);
+    border-radius: 4px;
+    margin: 0 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray-alpha-200);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--gray-alpha-200);
+    }
+  }
+
+  // Firefox scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-alpha-200) var(--gray-alpha-100);
+
+  // Responsive design
+  @media (max-width: 1200px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.25rem;
+  }
+}
+
+// Dashboard container styles
+.task-board-container {
+  background: var(--gray-gradient-light);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--gray-alpha-200);
+  box-shadow: 0 10px 40px rgba(var(--shadow-color), 0.1);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-alpha-200), transparent);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  .task-board {
+    &::-webkit-scrollbar-track {
+      background: var(--gray-alpha-100);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--gray-alpha-200);
+
+      &:hover {
+        background: var(--gray-alpha-200);
+      }
+    }
+
+    scrollbar-color: var(--gray-alpha-200) var(--gray-alpha-100);
+  }
+
+  .task-board-container {
+    background: var(--gray-gradient-light);
+    border-color: var(--gray-alpha-200);
+
+    &::before {
+      background: linear-gradient(90deg, transparent, var(--gray-alpha-200), transparent);
+    }
+  }
+}
